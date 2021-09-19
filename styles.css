@@ -1,0 +1,98 @@
+/*****************************
+Basic styles
+******************************/
+
+body {
+    margin: 0;
+    padding: 20px; /* Adds a 20px gap around the edge of the screen */
+    background: hsl(113, 92%, 85%); /* Background color */
+    font-family: sans-serif; /* Sets font family for entire page, unless you declare something else below */
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: hsl(113, 92%, 85%); /* Color for all headers */
+}
+
+
+/* Links */
+a {
+  color: aqua;
+  text-decoration: none; /* Removes underline from hyperlinks */
+}
+
+/* Hover effects */
+a:hover { color: hsl(286, 76%, 69%); }
+
+
+/*****************************
+Grid Container
+******************************/
+.container {
+  display: grid;  /* Don't delete this line */
+  grid-template-columns: repeat(12, 1fr); /* Sets up 12 equal columns */
+  grid-gap: 50px; /* Sets gap between sections */
+}
+
+/*****************************
+All Sections
+******************************/
+.section {
+  /* Visual styles for the sections */
+  padding: 10px;
+  background: #fac0cd;
+}
+
+/*****************************
+Individual Sections - Change the class names if you want, and delete anything you don't need.
+******************************/
+.one {
+  grid-column: span 0; /* Spans full width of 12 column container */
+
+}
+
+.two {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: larger;;
+  grid-column: span 2;
+  height: 150px;
+  width: 200px;
+}
+.three {
+  grid-column: span 6;
+  height: 500px;
+  font-weight: bolder;
+  font-size: xx-large;
+  text-align: center;
+  color: aqua;
+  
+}
+
+.four {
+  grid-column: span 4;
+  background: hsl(346, 52%, 90%); /* Matches the background color of the body */
+  border: 1px dashed #ababab;
+  text-align-last: center;
+ font-weight: bolder;
+ color:#4400ff;
+}
+
+/* With 12 columns, there are 13 vertical lines defining them;
+this tells the element to go from 2 to 7 */
+.five {
+  grid-column:  1 / 10;
+  text-align: center; /* Centers the text */
+  font-weight: lighter;
+  font-variant: small-caps;
+  color: #dd42eb;
+
+
+
+/*****************************
+ FOR MOBILE DEVICES:
+ When the browser is smaller than 600px wide,
+ all sections become 12 units wide (full width) 
+ ******************************/
+  @media (max-width: 600px) {
+    .section { grid-column: span 12; }
+
+  }
